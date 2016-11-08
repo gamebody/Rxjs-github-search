@@ -11,25 +11,22 @@ module.exports = {
     },
     output: {
         path: PATHS.build,
-        filename: '[name].js'
+        filename: '[name].js',
+        publicPath: 'assets'
     },
-    modules:[
-        {
-            test: /\.css$/,
-            loaders:['style','css']
-        },
-        {
-            test: /\.js$/,
-            loader: 'babel',
-            query: {
-                presets: ['es2015']
-            }
-        }
-    ],
+    module: {
+        loaders: [
+            {test: /\.js$/, loader: 'babel', exclude: /node_modules/},
+            {test: /\.css$/, loader: 'style!css'}
+        ],
+    },
     devServer: {
         historyApiFallback: true,
         hot: true,
         inline: true,
         progress: true,
+    },
+    resolve: {
+        extentions: ['','.js']
     }
 }

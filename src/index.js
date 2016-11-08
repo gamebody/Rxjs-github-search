@@ -1,1 +1,3 @@
-alert('hello world')
+import './css/common.css'
+
+console.log('hello')
