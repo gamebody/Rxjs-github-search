@@ -7,6 +7,10 @@ body {
 }
 /*----header-----*/
 #header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
     width: 100%;
     height: 70px;
     line-height: 70px;
@@ -79,11 +83,13 @@ li {
     list-style: none;
 }
 .user-list {
-    margin-top: 40px;
+    margin-top: 80px;
 }
 .user {
+    position: relative;
     width: 100%;
     height: 140px;
+    overflow: hidden;
     margin-bottom: 2px;
     box-shadow: 0 0 4px #000;    
     background-color: rgb(37, 37, 37);
@@ -118,11 +124,36 @@ li {
     font-size: 25px;;
     color: rgb(90, 90, 90)
 }
-.user-bye {
+
+.islike a {
+    display: block;
     float: right;
-    width: 200px;
+    margin-top: 30px;
+    margin-right: 80px;
+    width: 80px;
+    height: 80px;
+    background-size: 100% 100%;
+}
+.like{
+    background-image: url('../imgs/like.png');
+}
+.dislike{
+    background-image: url('../imgs/dislike.png');
+}
+.user-bye {
+    position: absolute;
+    width: 160px;
     height: 140px;
+    right: -140px;
+    transition: right 500ms;
+    background-image: url('../imgs/del.png');
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
     background-color: rgb(27, 27, 27);
+    background-position: center;
     border-left: 1px solid rgb(27, 27, 27);
     box-shadow: -1px 0 0px 1px rgb(17, 17, 17);
+}
+.user-bye:hover {
+    right:0px;
 }

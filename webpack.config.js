@@ -17,7 +17,8 @@ module.exports = {
     module: {
         loaders: [
             {test: /\.js$/, loader: 'babel', exclude: /node_modules/},
-            {test: /\.css$/, loader: 'style!css'}
+            {test: /\.css$/, loader: 'style!css'},
+            {test: /\.(png|jpg)$/, loader: 'url'}
         ],
     },
     devServer: {
